@@ -1,0 +1,31 @@
+name: ucore
+description: Custom uCore server OS
+base-image: ghcr.io/ublue-os/ucore
+image-version: stable
+
+modules:
+  - type: files
+    files:
+      - usr: /usr
+      - etc: /etc
+
+  - type: rpm-ostree
+    install:
+      - neovim
+      - dracut-sshd
+
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.service
+        - create-swapfile.service
+        - var-swapfile.swap
+      disabled:
+        - zincati.service
+      masked:
+        - zincati.service
+        - rpm-ostree-countme.timer
+
+  - type: script
+    snippets:
+      - "rpm-ostree initramfs --enable"

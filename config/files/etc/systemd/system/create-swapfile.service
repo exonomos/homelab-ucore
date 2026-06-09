@@ -1,0 +1,14 @@
+[Unit]
+Description=Create 8GB Swapfile
+ConditionPathExists=!/var/swapfile
+Before=swap.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fallocate -l 8G /var/swapfile
+ExecStart=/usr/bin/chmod 600 /var/swapfile
+ExecStart=/usr/sbin/mkswap /var/swapfile
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

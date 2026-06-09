@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount 8GB Swapfile
+Requires=create-swapfile.service
+After=create-swapfile.service
+
+[Swap]
+What=/var/swapfile
+
+[Install]
+WantedBy=multi-user.target
