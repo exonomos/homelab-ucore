@@ -7,10 +7,7 @@ modules:
   - type: files
     files:
       - source: etc
-      - destination: /etc
-
-  - type: timezone
-    timezone: Europe/Berlin
+        destination: /etc
 
   - type: rpm-ostree
     install:
