@@ -6,7 +6,6 @@ image-version: stable
 modules:
   - type: files
     files:
-      - usr: /usr
       - etc: /etc
 
   - type: rpm-ostree
