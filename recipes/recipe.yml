@@ -26,6 +26,4 @@ modules:
         - zincati.service
         - rpm-ostree-countme.timer
 
-  - type: script
-    snippets:
-      - "rpm-ostree initramfs --enable"
+  - type: initramfs
