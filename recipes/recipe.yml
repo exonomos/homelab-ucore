@@ -9,6 +9,9 @@ modules:
       - source: etc
       - destination: /etc
 
+  - type: timezone
+    timezone: Europe/Berlin
+
   - type: rpm-ostree
     install:
       - neovim
