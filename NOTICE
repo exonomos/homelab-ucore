@@ -1,0 +1,14 @@
+ucore — Custom Fedora uCore image for home server
+Copyright 2026 exonomos
+
+Based on the BlueBuild template (https://github.com/blue-build/template).
+Copyright 2024-2026 BlueBuild contributors — see LICENSE for details.
+
+Modifications:
+- recipes/recipe.yml — customized base image, modules, packages, and services
+- .github/workflows/build.yml — adjusted schedule and recipe references
+- files/etc/ — custom system configuration (DNS, ZRAM, keyboard, swap, etc.)
+- README.md — project-specific documentation
+
+This product includes software developed by the BlueBuild project
+(https://blue-build.org/) and the uBlue project (https://github.com/ublue-os).

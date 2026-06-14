@@ -1,3 +1,4 @@
+# Modified from BlueBuild template — exonomos
 name: bluebuild
 on:
   schedule:
