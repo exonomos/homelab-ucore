@@ -26,5 +26,3 @@ modules:
       masked:
         - zincati.service
         - rpm-ostree-countme.timer
-
-  - type: initramfs
