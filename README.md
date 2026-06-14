@@ -1,4 +1,4 @@
-# ucore &nbsp; [![bluebuild build badge](https://github.com/exonomos/ucore/actions/workflows/build.yml/badge.svg)](https://github.com/exonomos/ucore/actions/workflows/build.yml)
+# homelab-ucore &nbsp; [![bluebuild build badge](https://github.com/exonomos/homelab-ucore/actions/workflows/build.yml/badge.svg)](https://github.com/exonomos/homelab-ucore/actions/workflows/build.yml)
 
 A custom [Fedora uCore](https://github.com/ublue-os/ucore) image for a home server, built with [BlueBuild](https://blue-build.org/). Automatically built every night via GitHub Actions and signed with [cosign](https://github.com/sigstore/cosign).
 
@@ -21,7 +21,7 @@ A custom [Fedora uCore](https://github.com/ublue-os/ucore) image for a home serv
 
 ## How It Works
 
-This repository uses [BlueBuild](https://blue-build.org/) to define a custom container-native OS image. The [`recipe.yml`](./recipes/recipe.yml) declares the base image and modules — files dropped into `/etc`, extra RPM packages, and systemd service enablement. GitHub Actions runs the [`blue-build/github-action`](https://github.com/blue-build/github-action) every night, which builds a new OCI image and pushes it to the GitHub Container Registry at `ghcr.io/exonomos/ucore`.
+This repository uses [BlueBuild](https://blue-build.org/) to define a custom container-native OS image. The [`recipe.yml`](./recipes/recipe.yml) declares the base image and modules — files dropped into `/etc`, extra RPM packages, and systemd service enablement. GitHub Actions runs the [`blue-build/github-action`](https://github.com/blue-build/github-action) every night, which builds a new OCI image and pushes it to the GitHub Container Registry at `ghcr.io/exonomos/homelab-ucore`.
 
 The result is a ready-to-use Fedora CoreOS derivative you can rebase any existing Atomic Fedora installation onto.
 
@@ -34,7 +34,7 @@ To rebase an existing Atomic Fedora installation to the latest build:
 
 1. Rebase to the unsigned image to get the proper signing keys and policies installed:
    ```bash
-   rpm-ostree rebase ostree-unverified-registry:ghcr.io/exonomos/ucore:latest
+   rpm-ostree rebase ostree-unverified-registry:ghcr.io/exonomos/homelab-ucore:latest
    ```
 2. Reboot:
    ```bash
@@ -42,7 +42,7 @@ To rebase an existing Atomic Fedora installation to the latest build:
    ```
 3. Rebase to the signed image:
    ```bash
-   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/exonomos/ucore:latest
+   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/exonomos/homelab-ucore:latest
    ```
 4. Reboot again:
    ```bash
