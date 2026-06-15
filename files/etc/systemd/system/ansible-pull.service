@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync homelab container state via ansible-pull
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/lib/homelab-sync
+ExecStartPre=/usr/bin/mkdir -p /var/lib/homelab-sync
+ExecStart=/usr/bin/ansible-pull -U git@github.com:ExoNomos/homelab-services.git -d /var/lib/homelab-sync -i localhost, local.yml --accept-host-key
