@@ -14,6 +14,8 @@ modules:
     install:
       - neovim
       - dracut-sshd
+      - ansible-core
+      - git
 
   - type: systemd
     system:
@@ -21,6 +23,7 @@ modules:
         - cockpit.service
         - create-swapfile.service
         - var-swapfile.swap
+        - ansible-pull.timer
       disabled:
         - zincati.service
       masked:
