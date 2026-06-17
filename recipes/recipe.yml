@@ -16,6 +16,7 @@ modules:
       - dracut-sshd
       - ansible-core
       - git
+      - rsync
 
   - type: systemd
     system:
@@ -29,3 +30,7 @@ modules:
       masked:
         - zincati.service
         - rpm-ostree-countme.timer
+
+  - type: script
+    snippets:
+      - "ansible-galaxy collection install ansible.posix -p /usr/share/ansible/collections"
