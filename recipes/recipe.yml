@@ -23,6 +23,7 @@ modules:
       enabled:
         - cockpit.service
         - create-swapfile.service
+        - tailscaled.service
         - var-swapfile.swap
         - ansible-pull.timer
         - podman-prune.timer
