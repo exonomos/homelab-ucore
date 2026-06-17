@@ -1,10 +1,9 @@
 [Unit]
-Description=Trigger Ansible Pull every 5 minutes
+Description=Trigger Ansible Pull every day
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=5min
-RandomizedDelaySec=30s
+OnCalendar=*-*-* 04:00:00
+Persistent=true
 
 [Install]
 WantedBy=timers.target
