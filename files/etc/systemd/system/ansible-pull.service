@@ -6,4 +6,4 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 ExecStartPre=/usr/bin/mkdir -p /opt/homelab-sync
-ExecStart=/usr/bin/ansible-pull -U git@github.com:ExoNomos/homelab-services.git -d /opt/homelab-sync -i localhost, local.yml --accept-host-key
+ExecStart=/usr/bin/ansible-pull -U git@github.com:ExoNomos/homelab-services.git -d /opt/homelab-sync -i localhost, local.yml --accept-host-key --vault-password-file .vault_pass
