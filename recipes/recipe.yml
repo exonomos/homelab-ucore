@@ -25,6 +25,7 @@ modules:
         - create-swapfile.service
         - var-swapfile.swap
         - ansible-pull.timer
+        - podman-prune.timer
       disabled:
         - zincati.service
       masked:
